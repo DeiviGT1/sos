@@ -41,3 +41,16 @@ a{
   margin-right: 5%;
   align-self: center;
 }
+
+main{
+  display: flex;
+  margin-top: 10%;
+}
+
+.main-image{
+  background-color: gray;
+  margin-right: 10%;
+  width: 24em;
+  height: 24em;
+}
+
