@@ -1,0 +1,43 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fbc2c2;
+  margin: 2rem 20% 0 20%;
+}
+
+nav{
+  display: flex;
+  background-color: rgb(206, 255, 255);
+}
+
+ul{
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin-right: 10%;
+}
+
+li{
+  list-style-type: none;
+  align-self: center;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.logo{
+  height: 4rem;
+  width: 8rem;
+  background-color: gray;
+  margin-right: 10%;
+}
+
+.login {
+  margin-left: auto;
+  margin-right: 5%;
+  align-self: center;
+}
