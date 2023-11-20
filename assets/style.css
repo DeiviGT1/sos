@@ -5,17 +5,20 @@ body {
   color: #333;
   background-color: #fbc2c2;
   margin: 2rem 20% 0 20%;
+  padding: 0;
 }
 
 nav{
   display: flex;
   background-color: rgb(206, 255, 255);
+  
 }
 
 ul{
   display: flex;
   justify-content: space-between;
   width: 30%;
+  padding: 0;
   margin-right: 10%;
 }
 
@@ -36,10 +39,13 @@ a{
   margin-right: 10%;
 }
 
+.log{
+  display: flex;
+  align-items: center;
+}
+
 .login {
   margin-left: auto;
-  margin-right: 5%;
-  align-self: center;
 }
 
 main{
@@ -51,6 +57,50 @@ main{
   background-color: gray;
   margin-right: 10%;
   width: 24em;
-  height: 24em;
+  height: 24rem
 }
 
+.main-text{
+  align-self: center;
+}
+
+@media (max-width: 1280px) {
+
+  body{
+    margin: 2rem 0 0 0;
+    text-align: center;
+  }
+  .log{
+    display: block;
+    align-items: center;
+  }
+  .logo{
+    height: 4rem;
+    width: 100%;
+    background-color: gray;
+    margin: 0;
+    
+  }
+  .login{
+    margin: 0
+  }
+  nav{
+    display: block;
+    padding: 0 0 5% 0;
+  }
+
+  ul{
+    display: block;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;  
+    padding: 5% 0 0 0;
+  }
+  main{
+    display: block;
+  }
+  .main-image{
+    height: 20rem;
+    width: 100%;
+  }
+}
