@@ -4,7 +4,7 @@ body {
   line-height: 1.5;
   color: #FFFFFF;
   background-color: #474341;
-  margin: 2rem 20% 0 20%;
+  margin: 0 0 0 0;
   padding: 0;
 }
 
@@ -14,7 +14,15 @@ nav{
   
 }
 
-ul{
+header{
+  margin: 0 0 0 0;
+}
+
+main{
+  margin: 2rem 15% 0 15%;
+}
+
+nav ul{
   display: flex;
   justify-content: space-between;
   width: 30%;
@@ -30,6 +38,11 @@ li{
 a{
   text-decoration: none;
   color: black;
+}
+
+h1{
+  margin: 0 0 0 0;
+  text-align: center;
 }
 
 .logo{
@@ -48,23 +61,43 @@ a{
   margin-left: auto;
 }
 
-main{
+.main{
   display: flex;
-  margin-top: 10%;
 }
 
 .main-image{
   background-color: gray;
-  margin-right: 10%;
-  width: 24em;
+  margin: 5%;
+  width: 40%;
   height: 24rem
 }
 
 .main-text{
   align-self: center;
+  width: 40%;
+  margin: 5%;
+}
+.servicios ul{
+  list-style-type: none;
+  padding: 0 0 0 0;
 }
 
-@media (max-width: 1280px) {
+.serv{
+  display: flex;
+}
+
+.serv img{
+  width: 20%;
+  height: 20%;
+}
+
+.serv p{
+  width: auto;
+  margin: 0 0 0 0;
+
+}
+
+@media (max-width: 750px) {
 
   body{
     margin: 2rem 0 0 0;
