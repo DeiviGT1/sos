@@ -97,6 +97,48 @@ h1{
 
 }
 
+footer{
+  background-color: rgb(255, 206, 206);
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+.footer{
+  display: flex;
+}
+
+footer ul{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+footer li{
+  list-style-type: none;
+  margin: 0 0 0 0;
+}
+
+footer a{
+  text-decoration: none;
+  color: black;
+}
+
+footer p{
+  margin: 0 0 0 0;
+}
+
+.footer-logo {
+  display: flex;  
+  justify-content: center;
+}
+
+.footer-logo img {
+  width: 75%;
+  height: 75%;
+  margin: 5% 0;
+}
+
 @media (max-width: 750px) {
 
   body{
