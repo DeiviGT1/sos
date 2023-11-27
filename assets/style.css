@@ -20,7 +20,6 @@ nav{
   display: flex;
   width: 90%;
   padding: 0 15% 0 5%;
-  justify-content: space-between;
 }
 
 nav a{
@@ -57,7 +56,7 @@ nav > div{
 
 main > section{
   position: relative;
-  top: 2rem;
+  top: 1rem;
   z-index: 2;
   padding: 4rem 15%;
 }
@@ -89,6 +88,8 @@ section > h2{
   justify-content: space-evenly;
   display: flex;
   align-items: center;
+  font-weight: bold;
+  margin: 0;
 }
 
 div.main{
@@ -136,10 +137,6 @@ div.main{
   margin: 0 5%;
   columns: 2;
   align-self: center;
-}
-
-.serv li{
-  list-style-type: none;
 }
 
 .serv li::before {
@@ -199,10 +196,6 @@ footer .footer-lt{
   border-bottom: #FCEE21 solid 1px;
 }
 
-footer a{
-  color: black;
-}
-
 .textwidget{
   margin: 0 2%;
 }
@@ -212,16 +205,18 @@ footer a{
   color: #FCEE21
 }
 
+.textwidget span p{
+  margin: 0.5% 2.5%;
+}
+
 footer ul{
   display: flex;
-  justify-content: space-between;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
 }
 
 footer li{
   list-style-type: none;
-  margin: 0 0 0 0;
 }
 
 footer a{
@@ -234,7 +229,7 @@ footer p{
 }
 
 .footer-logo {
-  width: 20%;
+  width: 30%;
   justify-content: center;
   display: flex;
 }
@@ -247,7 +242,7 @@ footer p{
 }
 
 .footer-text{
-  width: 40%;
+  width: 67.5%;
   margin: 0 0 0 2.5%;
 }
 
@@ -256,60 +251,104 @@ footer p{
   height: auto;
 }
 
-.textwidget span p{
-  margin: 0.5% 2.5%;
+gmp-map{
+  height: 100%;
 }
 
 @media (max-width: 750px) {
-
   body{
-    margin: 2rem 0 0 0;
-    text-align: center;
+    text-align: justify;
   }
-  .log{
-    display: block;
-    align-items: center;
+  header{
+   display: inline-block; 
+   width: 100%;
+   font-size: 12px;
   }
-  .logo{
-    height: 4rem;
-    width: 100%;
-    background-color: gray;
-    margin: 0;
-    
-  }
-  .login{
-    margin: 0
-  }
-  nav{
-    display: block;
-    padding: 0 0 5% 0;
-  }
+  .logo {
+    display: none;
 
-  ul{
+  }
+  header nav, header nav ul, .log{
     display: block;
-    justify-content: space-between;
     width: 100%;
-    margin: 0;  
-    padding: 5% 0 0 0;
+    text-align: center;
+    padding: 0;
+  }
+  header nav ul{
+    width: 100%;
   }
   main{
+    width: 100%
+  }
+  header{
+    position: fixed;
+  }
+  main > section{
+    top: 5rem;
+    padding: 4rem 7.5%;
+  }
+  div.main{
     display: block;
   }
+    
   .main-image{
-    height: 20rem;
+    background-color: gray;
+    margin: 0;
+    width: 100%;
+    height: 18rem
+  }
+
+  .main-text{
+    align-self: center;
+    width: 100%;
+    margin: 0;
+  }
+  .servicios>ul{
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+  }
+  .serv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
+    font-size: 12px;
+  }
+  .serv>img{
+    width: 40%;
+    height: 40%;
+  }
+  .serv ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    columns: 1;
+    text-align: center;
+  }
+  .serv>ul li{
+    padding: 0.5%;
+  }  
+  footer section{
+    display: block;
+  }
+  .footer-t{
     width: 100%;
   }
-}
-
-/* GALERIA */
-
-.imagenes{
-  height: 100px;
-  width: 100%;
-}
-
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
-gmp-map{
-  height: 100%;
+  footer .footer-lt{
+    display: block;
+  }
+  .footer-logo{
+    width: 100%;
+  }
+  .footer-text{
+    width: 100%;
+    margin:0;
+    padding: 0 0 4rem 7.5%;
+  }
+  .maps{
+    width: 100%;
+    height: 24rem;
+  }
 }

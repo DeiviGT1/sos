@@ -1,0 +1,47 @@
+/* Agrega este bloque de estilos al final de tu archivo CSS existente o crea un nuevo archivo para los estilos del formulario */
+
+.contacto {
+  margin: 2rem 0;
+}
+
+.contacto h2 {
+  border-bottom: #272727 solid 2px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #FCEE21;
+  color: #40403F;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 2rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #272727;
+  color: #FCEE21;
+}
