@@ -15,7 +15,7 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
-.slide {
+.slide, .slide2{
   min-width: 100%;
   box-sizing: border-box;
 }
