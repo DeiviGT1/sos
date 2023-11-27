@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/assets/SVG/logo-isotipo.svg" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/substyles.css">
+    <title>S.O.S. Llaves y claves</title>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnPH6cbmcUf0Wp9BtdTFskVt-DbXuuiqg&callback=console.debug&libraries=maps,marker&v=beta"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/assets/PNG/color-no-fondo.png" alt="" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">INICIO</a></li>
+          <li>
+            <a href="/galeria.html">GALERIA</a>
+          </li>
+          <li>
+            <a href="index.php?controller=usuario&action=registro"
+              >CONTACTENOS</a
+            >
+          </li>
+        </ul>
+        <div class="log">
+          <div class="login">
+            <a href="">
+              <p>INICIAR SESIÓN</p>
+            </a>
+          </div>
+          <div>
+            <a href="index.php?controller=usuario&action=registro">
+              <p>REGISTRARSE</p>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="subtitle">
+        <h2>Apertura</h2>
+        <div>
+          <p>
+            Con los más altos estándares de excelencia, en S.O.S. Llaves y
+            Claves ofrecemos servicios de primera calidad para atender
+            situaciones de precariedad y prevenir contratiempos. Nos
+            especializamos en la apertura, reparación y cambio de claves para
+            una amplia gama de cerraduras, desde las más sencillas hasta las de
+            seguridad. Además, brindamos soluciones especializadas para puertas
+            blindadas, cajas fuertes, registradoras, cerraduras de escritorio,
+            archivadores, candados y maletas con clave. <br><br>
+            En S.O.S. Llaves y
+            Claves, también estamos preparados para abrir cualquier tipo de
+            vehículo, independientemente de la marca, ya sea Mazda, Renault,
+            Toyota, Ford, entre otras. Nuestra misión es proporcionar servicios
+            integrales, manteniendo la calidad y la eficiencia en cada
+            intervención, para ofrecer tranquilidad y seguridad a nuestros
+            clientes en momentos de urgencia y como medida preventiva.
+          </p>
+          <img src="./assets/cerrojo.jpg" alt="">
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section>
+        <div class="footer-t">
+          <div class="footer-lt">
+            <div class="footer-logo">
+              <img src="./assets/assets/PNG/color-no-fondo.png" alt="" />
+            </div>
+            <div class="footer-text">
+              <div class="info-contact">
+                <h2>Información de Contacto</h2>
+                <div class="textwidget">
+                  <p>Teléfonos</p>
+                  <span class="phone"
+                    ><a href="tel:6043669908"> <p>(604) 366 9908</p></a></span
+                  >
+                  <span class="cell"
+                    ><a href="tel:+573108956559"
+                      ><p>(+ 57) 310 895 65 59</p></a
+                    ></span
+                  >
+                  <p>Dirección</p>
+                  <span class="addres"
+                    ><a href="https://maps.app.goo.gl/uEcbZHnbezJid33k6"
+                      ><p>CLL 44 No. 79 - 157</p></a
+                    ></span
+                  >
+                  <p>Correo Electrónico</p>
+                  <span
+                    ><a href="mailto:info@sosllavesyclaves"
+                      ><p>info@sosllavesyclaves.com</p></a
+                    ></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>
+            S.O.S. Llaves y Claves, 2024. Todos los derechos reservados. Diseño
+            y desarrollo por
+            <a href="https://jdavidgonzalez.netlify.app/#">@David</a>
+          </p>
+        </div>
+        <div class="maps">
+          <gmp-map
+            center="6.248997211456299,-75.59228515625"
+            zoom="16"
+            map-id="DEMO_MAP_ID"
+          >
+            <gmp-advanced-marker
+              position="6.248997211456299,-75.59228515625"
+              title="My location"
+            >
+            </gmp-advanced-marker>
+          </gmp-map>
+        </div>
+      </section>
+    </footer>
+  </body>
+  <script>
+    // script.js
+    let prevScrollPos = window.pageYOffset;
+
+    window.addEventListener("scroll", function () {
+      const currentScrollPos = window.pageYOffset;
+      // create a const to get the current width of the screen
+      const width = window.innerWidth;
+      if (prevScrollPos > currentScrollPos) {
+        // Scrolling up, show the header
+        document.querySelector("header").style.top = "0";
+        document.querySelector("header").style.position = "fixed";
+      } else {
+        // Scrolling down, hide the header
+        // if im  in the top of the website ignore the code
+        if (currentScrollPos < 10) {
+          document.querySelector("header").style.top = "0";
+          return;
+        } else {
+          if (width > 1100) {
+            document.querySelector("header").style.top = "-100px"; // Adjust to match header height
+            document.querySelector("header").style.position = "fixed";
+          } else {
+            document.querySelector("header").style.top = "-175px"; // Adjust to match header height
+            document.querySelector("header").style.position = "fixed";
+          }
+        }
+      }
+
+      prevScrollPos = currentScrollPos;
+    });
+  </script>
+</html>

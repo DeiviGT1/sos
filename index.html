@@ -6,6 +6,7 @@
     <link rel="icon" href="./assets/assets/SVG/logo-isotipo.svg" />
     <link rel="stylesheet" href="./assets/style.css" />
     <title>S.O.S. Llaves y claves</title>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnPH6cbmcUf0Wp9BtdTFskVt-DbXuuiqg&callback=console.debug&libraries=maps,marker&v=beta"></script>
   </head>
   <body>
     <header>
@@ -15,25 +16,25 @@
       <nav>
         
         <ul>
-          <li><a href="index.php">Inicio</a></li>
+          <li><a href="index.html">INICIO</a></li>
           <li>
-            <a href="index.php?controller=usuario&action=login">Galeria</a>
+            <a href="/galeria.html">GALERIA</a>
           </li>
           <li>
             <a href="index.php?controller=usuario&action=registro"
-              >Contactenos</a
+              >CONTACTENOS</a
             >
           </li>
         </ul>
         <div class="log">
           <div class="login">
             <a href="">
-              <p>Iniciar sesion</p>
+              <p>INICIAR SESIÓN</p>
             </a>
           </div>
           <div>
             <a href="index.php?controller=usuario&action=registro">
-              <p>Registrarse</p>
+              <p>REGISTRARSE</p>
             </a>
           </div>
         </div>
@@ -41,7 +42,7 @@
     </header>
     <main>
       <section class="main">
-      <h1>S.O.S. Llaves y claves</h1>
+      <h2>S.O.S. Llaves y claves</h2>
       <!-- <h1>Prueba</h1> -->
         <div class="main">
           <div class="main-image"></div>
@@ -71,11 +72,14 @@
                 <img src="./assets/cerrojo.jpg" alt="" />
                 <ul>
                   <li>Muebles</li>
-                  <li>vehículos</li>
-                  <li>inmuebles</li>
-                  <li>artículos de clave</li>
-                  <li>cajas fuertes</li>
+                  <li>Vehículos</li>
+                  <li>Inmuebles</li>
+                  <li>Artículos de clave</li>
+                  <li>Cajas fuertes</li>
                 </ul>
+                <div>
+                  <button>Ver mas</button>
+                </div>
               </div>
             </li>
             <li class="cambio-de-clave">
@@ -84,10 +88,13 @@
                 <img src="./assets/candado.jpg" alt="" />
                 <ul>
                   <li>Cerraduras sencilas</li>
-                  <li>cerraduras de seguridad</li>
-                  <li>cinlindros de vehículos</li>
-                  <li>caja fuerte de dial o digital</li>
+                  <li>Cerraduras de seguridad</li>
+                  <li>Cinlindros de vehículos</li>
+                  <li>Caja fuerte de dial o digital</li>
                 </ul>
+                <div>
+                  <button>Ver mas</button>
+                </div>
               </div>
             </li>
             <li class="instalacion-de-cerradura">
@@ -96,16 +103,19 @@
                 <img src="./assets/cerrajero2.jpg" alt="" />
                 <ul>
                   <li>Platinas de seguridad</li>
-                  <li>ojos mágicos</li>
-                  <li>pivotes de seguridad</li>
-                  <li>pasadores</li>
-                  <li>electroimanes</li>
-                  <li>cantoneras</li>
-                  <li>tope de puerta</li>
-                  <li>gatos hidráulicos</li>
-                  <li>cajas fuertes</li>
-                  <li>puertas de seguridad</li>
+                  <li>Ojos mágicos</li>
+                  <li>Pivotes de seguridad</li>
+                  <li>Pasadores</li>
+                  <li>Electroimanes</li>
+                  <li>Cantoneras</li>
+                  <li>Tope de puerta</li>
+                  <li>Gatos hidráulicos</li>
+                  <li>Cajas fuertes</li>
+                  <li>Puertas de seguridad</li>
                 </ul>
+                <div>
+                  <button>Ver mas</button>
+                </div>
               </div>
             </li>
           </ul>
@@ -127,33 +137,44 @@
             su bienestar y seguridad.
           </p>
         </section>
-      <div class="maps"></div>
     </main>
     <footer>
       <section>
-      <div class="footer-logo">
-        <img src="./assets/assets/PNG/color-no-fondo.png" alt="" />
-      </div>
-      <div class="footer-text">
-        <div class="info-contact">
-          <h2>Información de Contacto</h2>
-          <div class="textwidget">
-            <p> Teléfonos</p>
-            <span class="phone"><a href="tel:6043669908"> <p>(604) 366 9908 </p></a></span>
-            <span class="cell"><a href="tel:+573108956559"><p> (+ 57) 310 895 65 59 </p></a></span>
-            <p>Dirección</p>
-            <span class="addres"><a href="https://maps.app.goo.gl/uEcbZHnbezJid33k6"><p>CLL 44 No. 79 - 157</p></a></span>
-            <p>Correo Electrónico</p>
-            <span><a href="mailto:info@sosllavesyclaves"><p>  info@sosllavesyclaves.com</p></a></span> 
+        <div class="footer-t">
+          <div class="footer-lt">
+            <div class="footer-logo">
+              <img src="./assets/assets/PNG/color-no-fondo.png" alt="" />
+            </div>
+            <div class="footer-text">
+              <div class="info-contact">
+                <h2>Información de Contacto</h2>
+                <div class="textwidget">
+                  <p> Teléfonos</p>
+                  <span class="phone"><a href="tel:6043669908"> <p>(604) 366 9908 </p></a></span>
+                  <span class="cell"><a href="tel:+573108956559"><p> (+ 57) 310 895 65 59 </p></a></span>
+                  <p>Dirección</p>
+                  <span class="addres"><a href="https://maps.app.goo.gl/uEcbZHnbezJid33k6"><p>CLL 44 No. 79 - 157</p></a></span>
+                  <p>Correo Electrónico</p>
+                  <span><a href="mailto:info@sosllavesyclaves"><p>  info@sosllavesyclaves.com</p></a></span> 
+                </div>
+              </div>
+            </div>
           </div>
+          <p>
+            S.O.S. Llaves y Claves, 2024. Todos los derechos reservados. Diseño
+            y desarrollo por <a href="https://jdavidgonzalez.netlify.app/#">@David</a>
+          </p>
         </div>
+      <div class="maps">
+        <gmp-map center="6.248997211456299,-75.59228515625" zoom="16" map-id="DEMO_MAP_ID">
+          <gmp-advanced-marker position="6.248997211456299,-75.59228515625" title="My location">
+          </gmp-advanced-marker>
+        </gmp-map>
       </div>
       
     </section>
-    <p>
-      S.O.S. Llaves y Claves, 2024. Todos los derechos reservados. Diseño
-      y desarrollo por <a href="https://jdavidgonzalez.netlify.app/#">@David</a>
-    </p>
+
+    
       
     </footer>
     

@@ -19,7 +19,7 @@ body {
 nav{
   display: flex;
   color: #E2E2E2;
-  background-color: #40403F;
+  
   width: 90%;
   padding: 0 15% 0 5%;
   justify-content: space-between;
@@ -31,10 +31,14 @@ nav a{
 
 header{
   margin: 0 0 0 0;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #272727;
   display: flex;
   position:fixed;
   transition: top 0.5s ease;
   z-index: 3;
+  border-bottom: #000000 solid 1px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul{
@@ -55,9 +59,9 @@ nav > div{
 
 main > section{
   position: relative;
-  top: 4.5rem;
+  top: 2rem;
   z-index: 2;
-  padding: 2rem 15% 2rem 15%;
+  padding: 4rem 15%;
 }
 
 a{
@@ -65,13 +69,13 @@ a{
   color: black;
 }
 
-h1{
-  margin: 0 0 0 0;
+section > h2{
+  border-bottom:#272727 solid 2px;
+  padding: 0 0 10px 0;
   text-align: center;
 }
 
 .logo{
-  background-color: #40403F;
   padding: 1%;
   width: 10%;
   display: flex;
@@ -96,7 +100,7 @@ div.main{
 
 .main-image{
   background-color: gray;
-  margin: 5%;
+  margin: 0 5%;
   width: 40%;
   height: 24rem
 }
@@ -104,18 +108,17 @@ div.main{
 .main-text{
   align-self: center;
   width: 40%;
-  margin: 5%;
+  margin: 0 5%;
 }
 
-.servicios{
-  padding: 2rem 15% 2rem 15%;
+.servicios{ 
   background-color: #40403F;
   color: #E2E2E2;
 }
 
-.servicios ul{
+.servicios>ul{
   list-style-type: none;
-  padding: 0 0 0 0;
+  padding: 0 0 0 5%;
 }
 
 .serv{
@@ -126,21 +129,43 @@ div.main{
 .serv img{
   width: 20%;
   height: 20%;
+  /* shape it as a circle */
+  border-radius: 50%;
 }
 
 .serv ul{
-  width: 100%;
+  width: 50%;
   margin: 0 5%;
   columns: 2;
   align-self: center;
 }
 
 .serv li{
-  list-style-type: circle;
+  list-style-type: none;
+}
+
+.serv li::before {
+  content: "🔑  "; 
+}
+
+.serv>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.serv>div button{
+  font-size: 125%;
+  background-color: rgb(252, 238, 33);
+  box-shadow: 0px 0px 15px -2px rgba(252,238,33,0.75);
+  border:none;
+  padding: 5% 10%;
+  border-radius: 10px;
 }
 
 footer{
-  background-color: #40403F;
+  background-color: #272727;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
   position: relative;
@@ -154,9 +179,17 @@ footer section{
   display: flex;
 }
 
-footer>p, footer>p a{
+.footer-t{
+  width: 62.5%;
+}
+
+footer .footer-lt{
+  display: flex;
+}
+
+.footer-t>p, .footer-t p>a{
+  color: #40403F;
   text-align: center;
-  color: #323232;
 }
 
 .info-contact h2{
@@ -174,7 +207,7 @@ footer a{
 
 .textwidget > p{
   font-weight: bold;
-  color: #E2E2E2
+  color: #FCEE21
 }
 
 footer ul{
@@ -191,6 +224,7 @@ footer li{
 
 footer a{
   text-decoration: none;
+  color: #e2e2e2;
 }
 
 footer p{
@@ -198,7 +232,7 @@ footer p{
 }
 
 .footer-logo {
-  width: 25%;
+  width: 20%;
   justify-content: center;
   display: flex;
 }
@@ -211,8 +245,13 @@ footer p{
 }
 
 .footer-text{
-  width: 70%;
-  margin: 0 0 0 5%;
+  width: 40%;
+  margin: 0 0 0 2.5%;
+}
+
+.maps{
+  width: 37.5%;
+  height: auto;
 }
 
 .textwidget span p{
@@ -258,4 +297,17 @@ footer p{
     height: 20rem;
     width: 100%;
   }
+}
+
+/* GALERIA */
+
+.imagenes{
+  height: 100px;
+  width: 100%;
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+gmp-map{
+  height: 100%;
 }
