@@ -1,0 +1,102 @@
+footer{
+  background-color: #272727;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  position: relative;
+  top: 4rem;
+  z-index: 2;
+  color: black;
+ display: block;
+}
+
+footer section{
+  display: flex;
+}
+
+/* .footer-t =  footer>section div:nth-child(n+1):nth-child(-n+1)*/
+
+footer>section div:nth-child(n+1):nth-child(-n+1){
+  width: 62.5%;
+}
+
+footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+1):nth-child(-n+1){
+  display: flex;
+  width: 100%;
+}
+
+footer>section div:nth-child(n+1):nth-child(-n+1)>p, footer>section div:nth-child(n+1):nth-child(-n+1) p>a{
+  color: #40403F;
+  text-align: center;
+}
+
+/* footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+2):nth-child(-n+2)>div = .info-contact   */
+footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+2):nth-child(-n+2)>div h2{
+  color: #e2e2e2;
+  border-bottom: #FCEE21 solid 1px;
+}
+
+footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+2):nth-child(-n+2)>div{
+  
+  width: 100%;
+  margin: 0 0 0 0;
+
+}
+
+footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+2):nth-child(-n+2)>div>div{
+  margin: 0 2%;
+}
+
+footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+2):nth-child(-n+2)>div>div > p{
+  font-weight: bold;
+  color: #FCEE21
+}
+
+footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+2):nth-child(-n+2)>div>div span p{
+  margin: 0.5% 2.5%;
+}
+
+footer ul{
+  display: flex;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+footer li{
+  list-style-type: none;
+}
+
+footer a{
+  text-decoration: none;
+  color: #e2e2e2;
+}
+
+footer p{
+  margin: 0 0 0 0;
+}
+
+footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+1):nth-child(-n+1){
+  width: 30%;
+  justify-content: center;
+  display: flex;
+}
+
+footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+1):nth-child(-n+1) img {
+  align-self: center;
+  width: 70%;
+  padding: 15%; 
+  object-fit: contain;
+}
+
+footer>section div:nth-child(n+1):nth-child(-n+1)>div div:nth-child(n+2):nth-child(-n+2){
+  width: 67.5%;
+  margin: 0 0 0 2.5%;
+}
+
+footer>section div:nth-child(n+2):nth-child(-n+2){
+  width: 37.5%;
+  height: auto;
+}
+
+gmp-map{
+  height: 100%;
+}
