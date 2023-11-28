@@ -1,0 +1,79 @@
+main > section{
+  position: relative;
+  top: 1rem;
+  z-index: 2;
+  padding: 4rem 15%;
+}
+
+/* div.main = main section:nth-child(n+1):nth-child(-n+1)>div */
+main section:nth-child(n+1):nth-child(-n+1)>div{
+  display: flex;
+}
+
+main section:nth-child(n+1):nth-child(-n+1)>div>div:nth-child(n+1):nth-child(-n+1){
+  background-color: gray;
+  margin: 0 5%;
+  width: 40%;
+  height: 24rem
+}
+
+main section:nth-child(n+1):nth-child(-n+1)>div>div:nth-child(n+2):nth-child(-n+2){
+  align-self: center;
+  width: 40%;
+  margin: 0 5%;
+}
+
+/* main section:nth-child(n+2):nth-child(-n+2) = .servicios */
+
+main section:nth-child(n+2):nth-child(-n+2){ 
+  background-color: #40403F;
+  color: #E2E2E2;
+}
+
+main section:nth-child(n+2):nth-child(-n+2)>ul{
+  padding: 0 0 0 5%;
+}
+
+/* main section:nth-child(n+2):nth-child(-n+2)>ul li>div = .serv */
+
+main section:nth-child(n+2):nth-child(-n+2)>ul li>div{
+  display: flex;
+  margin: 0 5%;
+}
+
+main section:nth-child(n+2):nth-child(-n+2)>ul li>div img{
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+}
+
+main section:nth-child(n+2):nth-child(-n+2)>ul li>div ul{
+  width: 50%;
+  margin: 0 5%;
+  columns: 2;
+  align-self: center;
+}
+
+main section:nth-child(n+2):nth-child(-n+2)>ul li>div li::before {
+  content: "🔑  "; 
+}
+
+main section:nth-child(n+2):nth-child(-n+2)>ul li>div>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+main section:nth-child(n+2):nth-child(-n+2)>ul li>div>div button{
+  font-size: 125%;
+  background-color: rgb(252, 238, 33);
+  box-shadow: 0px 0px 15px -2px rgba(252,238,33,0.75);
+  border:none;
+  padding: 5% 10%;
+  border-radius: 10px;
+}
+
+main section:nth-child(n+3):nth-child(-n+3)>div{
+  padding: 5% 25%;
+}

@@ -8,7 +8,7 @@ function Header() {
   return  (
     <header>
     <div className="logo">
-      {/* <img src={logo} /> */}
+      <img src={logo} />
     </div>
     <nav>
       

@@ -7,3 +7,25 @@ body {
   margin: 0 0 0 0;
   padding: 0;
 }
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+nav{
+  display: flex;
+  width: 90%;
+  padding: 0 15% 0 5%;
+}
+
+li{
+  list-style-type: none;
+  align-self: center;
+}
+
+section > h2{
+  border-bottom:#272727 solid 2px;
+  padding: 0 0 10px 0;
+  text-align: center;
+}
