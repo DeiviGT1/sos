@@ -259,6 +259,9 @@ gmp-map{
   body{
     text-align: justify;
   }
+  h2{
+    text-align: left;
+  }
   header{
    display: inline-block; 
    width: 100%;
@@ -266,6 +269,7 @@ gmp-map{
   }
   .logo {
     display: none;
+    max-width: 0%;
 
   }
   header nav, header nav ul, .log{
@@ -273,9 +277,6 @@ gmp-map{
     width: 100%;
     text-align: center;
     padding: 0;
-  }
-  header nav ul{
-    width: 100%;
   }
   main{
     width: 100%
@@ -330,6 +331,9 @@ gmp-map{
   .serv>ul li{
     padding: 0.5%;
   }  
+  .whower{
+    padding: 5% 7.5%;
+  }
   footer section{
     display: block;
   }
@@ -343,7 +347,7 @@ gmp-map{
     width: 100%;
   }
   .footer-text{
-    width: 100%;
+    width: 92.5%;
     margin:0;
     padding: 0 0 4rem 7.5%;
   }
