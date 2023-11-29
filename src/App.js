@@ -1,15 +1,18 @@
 import React from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
+
 import Principal from './pages/Principal';
 import './App.css';
+import { Route, Routes, BrowserRouter } from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Principal />
-      <Footer />
+      <BrowserRouter>
+      <Routes>
+        
+        <Route path="/" element={<Principal />} />
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
