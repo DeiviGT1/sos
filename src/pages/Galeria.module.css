@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color:red
+}
+
+section{
+  color:red
+}
+
+section>div {
+  width: 40%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+section>div>div:nth-child(n+1):nth-child(-n+1) {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+section>div>div:nth-child(n+1):nth-child(-n+1) div {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+img {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
+section>div>div:nth-child(n+2):nth-child(-n+3) {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 750px) {
+  .slider-container{
+    width: 80%;
+  }
+}
