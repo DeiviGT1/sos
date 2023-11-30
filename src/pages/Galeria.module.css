@@ -1,16 +1,16 @@
-.slider_container {
+#slider1 {
   width: 40%;
   margin: auto;
   overflow: hidden;
   position: relative;
 }
 
-.slides {
+#slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
-.slide{
+#slide {
   min-width: 100%;
   box-sizing: border-box;
 }
@@ -21,7 +21,7 @@ img {
   height: auto;
 }
 
-.prev, .next {
+#prev, #next {
   position: absolute;
   top: 50%;
   width: auto;
@@ -34,10 +34,10 @@ img {
   user-select: none;
 }
 
-.next {
+#next {
   right: 0;
 }
 
-.prev:hover, .next:hover {
+#prev:hover, #next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }

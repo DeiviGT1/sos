@@ -1,5 +1,5 @@
 import React from "react";
-import styles from  "./Galeria.module.css";
+import "./Galeria.module.css";
 import cerrojo from "../assets/cerrojo.jpg";
 import cerrajero2 from "../assets/cerrajero2.jpg";
 import cerrajero3 from "../assets/candado.jpg";
@@ -40,29 +40,98 @@ function Galeria() {
 
   return (
     <>
-      
-      <section className="gal">
+      <Header/>
+      <section className="gal" style={
+        {
+          position: 'relative',
+          top: '1rem',
+          zIndex: '2',
+          padding: '4rem 15%',
+        }
+      }>
         <h2>Galeria</h2>
-        <div className="slider_container" id="slider1">
-          <div className="slides">
-            <div className="slide">
+        <div className="slider_container" id="slider1" style={
+          {
+            width: '60%',
+            margin: 'auto',
+            overflow: 'hidden',
+            position: 'relative',
+          }
+        }>
+          <div className="slides" id="slides" style={
+            {
+              display: 'flex',
+              transition: 'transform 0.5s ease-in-out',
+            }
+          }>
+            <div className="slide" id="slide">
               <img src={cerrojo} alt="Imagen 1" />
             </div>
-            <div className="slide">
+            <div className="slide" id="slide">
               <img src={cerrajero2} alt="Imagen 2" />
             </div>
-            <div className="slide">
+            <div className="slide" id="slide">
               <img src={cerrajero3} alt="Imagen 3" />
             </div>
           </div>
-          <div className="prev" ><button onClick={() => plusSlides('slider1', -1)}></button></div>
-          <div className="next" ><button onClick={() => plusSlides('slider1', 1)}></button></div>
-          
-          {/* <div className="prev" ></div>
-          <div className="next" ></div> */}
+          <div
+            className="prev"
+            id="prev"
+            onClick={() => plusSlides('slider1', -1)}
+            style={{
+              position: 'absolute',
+              top: '50%',
+              width: 'auto',
+              padding: '16px',
+              margin: '-22px 0 0 0',
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: '20px',
+              cursor: 'pointer',
+              userSelect: 'none',
+              transition: 'background-color 0.3s ease', // Add transition for a smooth effect
+              backgroundColor: 'initial', // Initial background color
+            }}
+            onMouseOver={() => {
+              // Change background color on hover
+              document.getElementById('prev').style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            }}
+            onMouseOut={() => {
+              // Restore initial background color on mouse out
+              document.getElementById('prev').style.backgroundColor = 'initial';
+            }}
+          ><p>&lt;</p>
+          </div>
+
+          <div className="next" id="next" onClick={() => plusSlides('slider1', 1)}   style={{
+              position: 'absolute',
+              top: '50%',
+              width: 'auto',
+              padding: '16px',
+              margin: '-22px 0 0 0',
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: '20px',
+              cursor: 'pointer',
+              userSelect: 'none',
+              transition: 'background-color 0.3s ease', // Add transition for a smooth effect
+              backgroundColor: 'initial', // Initial background color
+              right: '0',
+            }}
+            onMouseOver={() => {
+              // Change background color on hover
+              document.getElementById('next').style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            }}
+            onMouseOut={() => {
+              // Restore initial background color on mouse out
+              document.getElementById('next').style.backgroundColor = 'initial';
+            }}
+          ><p>&gt;</p>
+          </div>
+      
         </div>
       </section>
-      
+      <Footer></Footer>
     </>
   );
         }
