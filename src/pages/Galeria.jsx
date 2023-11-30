@@ -1,5 +1,5 @@
 import React from "react";
-import "./Galeria.module.css";
+import styles from  "./Galeria.module.css";
 import cerrojo from "../assets/cerrojo.jpg";
 import cerrajero2 from "../assets/cerrajero2.jpg";
 import cerrajero3 from "../assets/candado.jpg";
@@ -43,7 +43,7 @@ function Galeria() {
       
       <section className="gal">
         <h2>Galeria</h2>
-        <div className="slider-container" id="slider1">
+        <div className="slider_container" id="slider1">
           <div className="slides">
             <div className="slide">
               <img src={cerrojo} alt="Imagen 1" />
@@ -55,8 +55,9 @@ function Galeria() {
               <img src={cerrajero3} alt="Imagen 3" />
             </div>
           </div>
-          <div className="prev" onClick={() => plusSlides('slider1', -1)}></div>
-          <div className="next" onClick={() => plusSlides('slider1', 1)}></div>
+          <div className="prev" ><button onClick={() => plusSlides('slider1', -1)}></button></div>
+          <div className="next" ><button onClick={() => plusSlides('slider1', 1)}></button></div>
+          
           {/* <div className="prev" ></div>
           <div className="next" ></div> */}
         </div>
