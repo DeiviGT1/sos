@@ -10,16 +10,14 @@ import { useEffect, useState } from 'react';
 
 function Galeria() {
   const [slideIndex, setSlideIndex] = useState(1);
-  const [slideIndex2, setSlideIndex2] = useState(1);
-  
 
   useEffect(() => {
     showSlides(slideIndex, 'slider1');
   }, [slideIndex]);
 
   useEffect(() => {
-    showSlides(slideIndex2, 'slider2');
-  }, [slideIndex2]);
+    showSlides(slideIndex, 'slider2');
+  }, [slideIndex]);
 
 
   function plusSlides(sliderId, n) {
@@ -48,7 +46,8 @@ function Galeria() {
   return (
     <>
       <Header/>
-      <section className="gal" style={
+      <section className="gal" 
+      style={
         {
           position: 'relative',
           top: '1rem',
@@ -207,8 +206,11 @@ function Galeria() {
           ><p>&lt;</p>
           </div>
 
-          <div className="next" id="next2" onClick={() => plusSlides('slider2', 1)}   
-          style={{
+          <div 
+            className="next" 
+            id="next2" 
+            onClick={() => plusSlides('slider2', 1)}   
+            style={{
               position: 'absolute',
               top: '50%',
               width: 'auto',
