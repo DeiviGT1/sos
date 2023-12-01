@@ -244,7 +244,7 @@ function Galeria() {
         </div>
       </section>
 
-      <Footer></Footer>
+      <Footer/>
     </>
   );
         }
