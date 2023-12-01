@@ -49,9 +49,9 @@ function Header() {
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">INICIO</a></li>
-          <li><a href="/galeria.html">GALERIA</a></li>
-          <li><a href="index.php?controller=usuario&action=registro">CONTACTENOS</a></li>
+          <li><a href="/">INICIO</a></li>
+          <li><a href="/galeria">GALERIA</a></li>
+          <li><a href="/contact">CONTACTENOS</a></li>
         </ul>
         <ul className=".log">
           <li className="login">

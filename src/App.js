@@ -15,6 +15,7 @@ function App() {
         <Route path="/galeria" element={<Galeria/>} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/servicios" element={<Servicios />} />
+        <Route path="/contact" element={<Contact/>} />
       </Routes>
       </BrowserRouter>
     </div>

@@ -11,12 +11,12 @@ function Principal() {
     <>
     <Header />
       <main>
-        <section class="main">
+        <section className="main">
         <h2>S.O.S. Llaves y claves</h2>
       
-        <div class="main">
-          <div class="main-image"></div>
-          <div class="main-text">
+        <div className="main">
+          <div className="main-image"></div>
+          <div className="main-text">
             <p>
               Bienvenidos a S.O.S. Llaves y Claves, donde nos dedicamos a superar
               sus expectativas en servicios de cerrajería. Nuestro equipo
@@ -32,13 +32,13 @@ function Principal() {
         </div>
           
         </section>
-        <section class="servicios">
+        <section className="servicios">
           <h2>Servicios</h2>
           
             <ul>
-              <li class="apertura">
+              <li className="apertura">
                 <h3>Apertura</h3>
-                <div class="serv">
+                <div className="serv">
                   <img src={cerrojo} alt="" />
                   <ul>
                     <li>Muebles</li>
@@ -48,13 +48,13 @@ function Principal() {
                     <li>Cajas fuertes</li>
                   </ul>
                   <div>
-                    <button>Ver mas</button>
+                    <button src="/servicios">Ver mas</button>
                   </div>
                 </div>
               </li>
-              <li class="cambio-de-clave">
+              <li className="cambio-de-clave">
                 <h3>Cambios de clave</h3>
-                <div class="serv">
+                <div className="serv">
                   <img src={cerrajero2} alt="" />
                   <ul>
                     <li>Cerraduras sencilas</li>
@@ -63,13 +63,15 @@ function Principal() {
                     <li>Caja fuerte de dial o digital</li>
                   </ul>
                   <div>
-                    <button>Ver mas</button>
+                    <button src="">
+                      <a href="/servicios"></a>
+                      Ver mas</button>
                   </div>
                 </div>
               </li>
-              <li class="instalacion-de-cerradura">
+              <li className="instalacion-de-cerradura">
                 <h3>Instalación de cerraduras</h3>
-                <div class="serv">
+                <div className="serv">
                   <img src={cerrajero3} alt="" />
                   <ul>
                     <li>Platinas de seguridad</li>
@@ -84,13 +86,13 @@ function Principal() {
                     <li>Puertas de seguridad</li>
                   </ul>
                   <div>
-                    <button>Ver mas</button>
+                    <button src="/servicios">Ver mas</button>
                   </div>
                 </div>
               </li>
             </ul>
           </section>      
-          <section class="whower">
+          <section className="whower">
             <h2>¿Quienes somos?</h2>
             <p>
               SOS Llaves y Claves, establecida desde el 1 de agosto de 2004,

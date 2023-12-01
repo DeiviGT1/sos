@@ -10,20 +10,21 @@ import { useEffect, useState } from 'react';
 
 function Galeria() {
   const [slideIndex, setSlideIndex] = useState(1);
+  const [slideIndex2, setSlideIndex2] = useState(1);
 
   useEffect(() => {
-    showSlides(slideIndex, 'slider1');
+    showSlides(slideIndex, 'slider1', setSlideIndex);
   }, [slideIndex]);
 
   useEffect(() => {
-    showSlides(slideIndex, 'slider2');
-  }, [slideIndex]);
+    showSlides(slideIndex2, 'slider2', setSlideIndex2);
+  }, [slideIndex2]);
 
 
-  function plusSlides(sliderId, n) {
+  function plusSlides(sliderId, n, functionIndex) {
     const slides = document.getElementById(sliderId).querySelectorAll('.slide');
     
-    setSlideIndex((prevIndex) => {
+    functionIndex((prevIndex) => {
       const newIndex = prevIndex + n;
       if (newIndex > slides.length) return 1;
       if (newIndex < 1) return slides.length;
@@ -31,14 +32,18 @@ function Galeria() {
     });
   }
 
-  function showSlides(index, sliderId) {
+  function showSlides(index, sliderId, functionIndex) {
     const slides = document.getElementById(sliderId).querySelectorAll('.slide');
 
-    if (index > slides.length) setSlideIndex(1);
-    if (index < 1) setSlideIndex(slides.length);
+    if (index > slides.length) functionIndex(1);
+    if (index < 1) functionIndex(slides.length);
 
     slides.forEach((slide, i) => {
-      slide.style.display = i === (slideIndex - 1) ? 'block' : 'none';
+      if (functionIndex === setSlideIndex){
+      slide.style.display = i === (slideIndex - 1) ? 'block' : 'none';}
+      else{
+        slide.style.display = i === (slideIndex2 - 1) ? 'block' : 'none';
+      }
     });
 
   }
@@ -85,7 +90,7 @@ function Galeria() {
           <div
             className="prev"
             id="prev"
-            onClick={() => plusSlides('slider1', -1)}
+            onClick={() => plusSlides('slider1', -1, setSlideIndex)}
             style={{
               position: 'absolute',
               top: '50%',
@@ -111,7 +116,7 @@ function Galeria() {
           ><p>&lt;</p>
           </div>
 
-          <div className="next" id="next" onClick={() => plusSlides('slider1', 1)}   
+          <div className="next" id="next" onClick={() => plusSlides('slider1', 1, setSlideIndex)}   
           style={{
               position: 'absolute',
               top: '50%',
@@ -180,7 +185,7 @@ function Galeria() {
           <div
             className="prev"
             id="prev2"
-            onClick={() => plusSlides('slider2', -1)}
+            onClick={() => plusSlides('slider2', -1, setSlideIndex2)}
             style={{
               position: 'absolute',
               top: '50%',
@@ -209,7 +214,7 @@ function Galeria() {
           <div 
             className="next" 
             id="next2" 
-            onClick={() => plusSlides('slider2', 1)}   
+            onClick={() => plusSlides('slider2', 1, setSlideIndex2)}   
             style={{
               position: 'absolute',
               top: '50%',

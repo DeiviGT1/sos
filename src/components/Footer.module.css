@@ -43,7 +43,7 @@ footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+2):nth-child(-
 }
 
 footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+2):nth-child(-n+2)>div>div{
-  margin: 0 2%;
+  margin: 0 3%;
 }
 
 footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+2):nth-child(-n+2)>div>div > p{
@@ -84,7 +84,6 @@ footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+1):nth-child(-
   align-self: center;
   width: 70%;
   padding: 15%; 
-  object-fit: contain;
 }
 
 footer>section div:nth-child(n+1):nth-child(-n+1)>div div:nth-child(n+2):nth-child(-n+2){
@@ -92,11 +91,37 @@ footer>section div:nth-child(n+1):nth-child(-n+1)>div div:nth-child(n+2):nth-chi
   margin: 0 0 0 2.5%;
 }
 
-footer>section div:nth-child(n+2):nth-child(-n+2){
+footer>section>div:nth-child(n+2):nth-child(-n+2){
   width: 37.5%;
   height: auto;
 }
 
 gmp-map{
   height: 100%;
+}
+@media (max-width: 750px) {
+  footer section{
+    display: block;
+  }
+  footer>section div:nth-child(n+1):nth-child(-n+1){
+    width: 100%;
+  }
+  footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+1):nth-child(-n+1){
+    display: block;
+  }
+  footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+1):nth-child(-n+1){
+    width: 100%;
+  }
+  footer>section div:nth-child(n+1):nth-child(-n+1)>div div:nth-child(n+2):nth-child(-n+2){
+    width: 90%;
+    margin:0;
+    padding: 0 5% ;
+  }
+  footer>section>div:nth-child(n+2):nth-child(-n+2){
+    width: 100%;
+    height: 24rem;
+  }
+  footer>section div:nth-child(n+1):nth-child(-n+1)>div:nth-child(n+2):nth-child(-n+2)>div>div{
+    margin: 0;
+  }
 }

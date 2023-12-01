@@ -61,3 +61,18 @@ header>nav ul:nth-child(n+2):nth-child(-n+2){
   font-weight: bold;
   margin: 0;
 }
+
+@media (max-width: 750px) {
+  header>div{
+    display: none;
+    max-width: 0%;
+  }
+
+  header nav, header nav ul, header>nav ul:nth-child(n+2):nth-child(-n+2){
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  
+}

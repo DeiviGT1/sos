@@ -1,0 +1,33 @@
+.subtitle div{
+  display: flex;
+  align-items: center;
+}
+
+.subtitle div>p{
+  width: 55%;
+  padding: 2.5%;
+  margin: 0
+}
+
+.subtitle img{
+  display: flex;
+  height: 25%;
+  width: 35%;
+  padding: 2.5%;
+  border-radius: 100px;
+}
+
+@media (max-width: 750px) {
+  .subtitle div{
+    flex-direction: column;
+  }
+
+  .subtitle div>p{
+    width: 100%;
+  }
+
+  .subtitle img{
+    width: 50%;
+    height: 50%;
+  }
+}
