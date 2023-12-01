@@ -68,6 +68,7 @@ function Galeria() {
             margin: 'auto',
             overflow: 'hidden',
             position: 'relative',
+            ...(window.innerWidth <= 750 ? { width: '85%' } : null),
           }
         }>
           <div className="slides" id="slides" 
@@ -163,6 +164,7 @@ function Galeria() {
             margin: 'auto',
             overflow: 'hidden',
             position: 'relative',
+            ...(window.innerWidth <= 750 ? { width: '85%' } : null),
           }
         }>
           <div className="slides" id="slides" 
