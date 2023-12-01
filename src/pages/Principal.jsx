@@ -5,6 +5,7 @@ import cerrajero2 from "../assets/cerrajero2.jpg";
 import cerrajero3 from "../assets/candado.jpg";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Link } from "react-router-dom";
 
 function Principal() {
   return(
@@ -48,7 +49,11 @@ function Principal() {
                     <li>Cajas fuertes</li>
                   </ul>
                   <div>
-                    <button src="/servicios">Ver mas</button>
+                    <button>
+                      <Link to="/servicios">
+                        Ver mas
+                      </Link>
+                    </button>
                   </div>
                 </div>
               </li>
@@ -63,9 +68,11 @@ function Principal() {
                     <li>Caja fuerte de dial o digital</li>
                   </ul>
                   <div>
-                    <button src="">
-                      <a href="/servicios"></a>
-                      Ver mas</button>
+                    <button>
+                      <Link to="/servicios">
+                        Ver mas
+                      </Link>
+                    </button>
                   </div>
                 </div>
               </li>
@@ -86,7 +93,11 @@ function Principal() {
                     <li>Puertas de seguridad</li>
                   </ul>
                   <div>
-                    <button src="/servicios">Ver mas</button>
+                    <button>
+                      <Link to="/servicios">
+                        Ver mas
+                      </Link>
+                    </button>
                   </div>
                 </div>
               </li>
