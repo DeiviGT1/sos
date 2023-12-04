@@ -14,14 +14,13 @@ import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const routes = [];
-routes.push({ path: "/", name: "Home", Component: Principal });
-routes.push({ path: "/galeria", name: "Galeria", Component: Galeria });
-routes.push({ path: "/contact", name: "Contact", Component: Contact });
-routes.push({ path: "/servicios", name: "Servicios", Component: Servicios });
+routes.push({ path: "/", name: "Home" });
+routes.push({ path: "/galeria", name: "Galeria" });
+routes.push({ path: "/contact", name: "Contact" });
 
 const routesLog = [];
-routesLog.push({ path: "/login", name: "Login", Component: LoginPage });
-routesLog.push({ path: "/logout", name: "Logout", Component: LogoutPage });
+routesLog.push({ path: "/login", name: "Login" });
+routesLog.push({ path: "/logout", name: "Logout" });
 
 function Header() {
   useEffect(() => {
@@ -67,18 +66,18 @@ function Header() {
       </div>
       <nav>
         <ul>
-          {routes.map(({ path, name, Component }) => (
+          {routes.map(({ path, name }) => (
             <li key={path}>
-              <NavLink to={path} activeClassName="active"> 
+              <NavLink to={path} className="active"> 
                 <span style={{ textTransform: 'uppercase' }}>{name}</span>
               </NavLink>
             </li>
             ))}
         </ul>
         <ul className=".log">
-          {routesLog.map(({ path, name, Component }) => (
+          {routesLog.map(({ path, name }) => (
             <li key={path}>
-              <NavLink to={path} activeClassName="active"> 
+              <NavLink to={path} className="active"> 
                 <span style={{ textTransform: 'uppercase' }}>{name}</span>
               </NavLink>
             </li>
