@@ -64,7 +64,7 @@ function Galeria() {
         <div className="slider_container" id="slider1" 
         style={
           {
-            width: '60%',
+            width: '50%',
             margin: 'auto',
             overflow: 'hidden',
             position: 'relative',
@@ -160,7 +160,7 @@ function Galeria() {
         <div className="slider_container" id="slider2" 
         style={
           {
-            width: '60%',
+            width: '50%',
             margin: 'auto',
             overflow: 'hidden',
             position: 'relative',
