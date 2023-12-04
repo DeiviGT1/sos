@@ -3,7 +3,25 @@
 import React from 'react';
 import './Header.module.css';
 import logo from '../../src/assets/images/color-no-fondo.png'
+import Principal from '../pages/Principal';
+import Galeria from '../pages/Galeria';
+import Contact from '../pages/Contact';
+import Servicios from '../pages/Servicios';
+import LoginPage from '../components/LoginPage';
+import LogoutPage from '../components/LogoutPage';
+
 import { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+
+const routes = [];
+routes.push({ path: "/", name: "Home", Component: Principal });
+routes.push({ path: "/galeria", name: "Galeria", Component: Galeria });
+routes.push({ path: "/contact", name: "Contact", Component: Contact });
+routes.push({ path: "/servicios", name: "Servicios", Component: Servicios });
+
+const routesLog = [];
+routesLog.push({ path: "/login", name: "Login", Component: LoginPage });
+routesLog.push({ path: "/logout", name: "Logout", Component: LogoutPage });
 
 function Header() {
   useEffect(() => {
@@ -49,21 +67,23 @@ function Header() {
       </div>
       <nav>
         <ul>
-          <li><a href="/">INICIO</a></li>
-          <li><a href="/galeria">GALERIA</a></li>
-          <li><a href="/contact">CONTACTENOS</a></li>
+          {routes.map(({ path, name, Component }) => (
+            <li key={path}>
+              <NavLink to={path} activeClassName="active"> 
+                <span style={{ textTransform: 'uppercase' }}>{name}</span>
+              </NavLink>
+            </li>
+            ))}
         </ul>
         <ul className=".log">
-          <li className="login">
-            <a href="">
-              <p>INICIAR SESIÓN</p>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?controller=usuario&action=registro">
-              <p>REGISTRARSE</p>
-            </a>
-          </li>
+          {routesLog.map(({ path, name, Component }) => (
+            <li key={path}>
+              <NavLink to={path} activeClassName="active"> 
+                <span style={{ textTransform: 'uppercase' }}>{name}</span>
+              </NavLink>
+            </li>
+          ))}
+
         </ul>
       </nav>
     </header>
@@ -71,3 +91,4 @@ function Header() {
 }
 
 export default Header;
+
