@@ -11,7 +11,6 @@ function AuthProvider({ children }){
   const login = ( username ) =>{
     const isAdmin = adminList.includes(username.userName)
     const name = username.userName
-    console.log(user, isAdmin)
     setUser( { name, isAdmin} )
     nav("/profile")
   }

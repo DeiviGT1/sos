@@ -3,7 +3,6 @@ import { useAuth } from "../components/auth";
 
 function Profile() {
   const auth = useAuth();
-  console.log(auth)
 
   return (
     <>
