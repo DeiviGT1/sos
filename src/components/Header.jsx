@@ -3,29 +3,29 @@
 import React from 'react';
 import './Header.module.css';
 import logo from '../../src/assets/images/color-no-fondo.png'
-import Principal from '../pages/Principal';
-import Galeria from '../pages/Galeria';
-import Contact from '../pages/Contact';
-import Servicios from '../pages/Servicios';
-import LoginPage from '../components/LoginPage';
-import LogoutPage from '../components/LogoutPage';
-
+import { useAuth } from '../components/auth';
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const routes = [];
-routes.push({ path: "/", name: "Home" });
-routes.push({ path: "/galeria", name: "Galeria" });
-routes.push({ path: "/contact", name: "Contact" });
+routes.push({ path: "/", name: "Home", private: false });
+routes.push({ path: "/galeria", name: "Galeria", private: false });
+routes.push({ path: "/contact", name: "Contact", private: false });
 
 const routesLog = [];
-routesLog.push({ path: "/login", name: "Login" });
-routesLog.push({ path: "/logout", name: "Logout" });
+routesLog.push({ path: "/login", name: "Login", private: false, publicOnly: true });
+routesLog.push({ path: "/profile", name: "Profile", private: true });
+routesLog.push({ path: "/logout", name: "Logout", private: true });
 
 function Header() {
+  const auth = useAuth();
+
+  if (!auth.user) {
+
+  }
+
   useEffect(() => {
     let prevScrollPos = window.pageYOffset;
-
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
       const width = window.innerWidth;
@@ -50,14 +50,12 @@ function Header() {
 
       prevScrollPos = currentScrollPos;
     };
-
+    
     window.addEventListener('scroll', handleScroll);
-
     return () => {
-      // Cleanup: remove the event listener when the component unmounts
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []); // The empty dependency array ensures the effect runs once after the component mounts
+  }, []);
 
   return (
     <header>
@@ -77,13 +75,19 @@ function Header() {
             ))}
         </ul>
         <ul className=".log">
-          {routesLog.map(({ path, name }) => (
-            <li key={path}>
-              <NavLink to={path} className="active"> 
-                <span style={{ textTransform: 'uppercase' }}>{name}</span>
+          {routesLog.map(routesLog => {
+            if (routesLog.publicOnly && auth.user) return null
+            if (routesLog.private && !auth.user) return null 
+            
+            return(
+            <li key={routesLog.path}>
+              <NavLink to={routesLog.path} className="active"> 
+                <span style={{ textTransform: 'uppercase' }}>
+                  {routesLog.name}
+                </span>
               </NavLink>
             </li>
-          ))}
+            )})}
 
         </ul>
       </nav>

@@ -6,6 +6,8 @@ import Servicios from './pages/Servicios';
 import Profile from './pages/Profile';
 import LoginPage from './components/LoginPage';
 import LogoutPage from './components/LogoutPage';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import './App.css';
 import { Route, Routes, BrowserRouter } from "react-router-dom"
 import { AuthProvider } from "./components/auth"
@@ -15,6 +17,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <AuthProvider>
+          <Header />
           <Routes>
             <Route path="/" element={<Principal />} />
             <Route path="/galeria" element={<Galeria />} />
@@ -25,6 +28,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/logout" element={<LogoutPage />} />
           </Routes>
+          <Footer />
         </AuthProvider>
       </BrowserRouter>
     </div>
