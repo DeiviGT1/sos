@@ -1,12 +1,9 @@
 import React from "react";
 import "./Contact.module.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 function Contact() {
   return(
     <>
-    <Header/>
     <main>
       <section className="contacto" style={
         {

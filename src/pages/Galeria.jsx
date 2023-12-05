@@ -3,8 +3,7 @@ import "./Galeria.module.css";
 import cerrojo from "../assets/cerrojo.jpg";
 import cerrajero2 from "../assets/cerrajero2.jpg";
 import cerrajero3 from "../assets/candado.jpg";
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+
 
 import { useEffect, useState } from 'react';
 
@@ -50,7 +49,7 @@ function Galeria() {
 
   return (
     <>
-      <Header/>
+
       <section className="gal" 
       style={
         {
@@ -245,8 +244,6 @@ function Galeria() {
       
         </div>
       </section>
-
-      <Footer/>
     </>
   );
         }

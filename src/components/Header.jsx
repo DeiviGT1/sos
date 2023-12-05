@@ -12,6 +12,7 @@ import LogoutPage from '../components/LogoutPage';
 
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../components/auth';
 
 const routes = [];
 routes.push({ path: "/", name: "Home" });
@@ -19,10 +20,13 @@ routes.push({ path: "/galeria", name: "Galeria" });
 routes.push({ path: "/contact", name: "Contact" });
 
 const routesLog = [];
-routesLog.push({ path: "/login", name: "Login" });
-routesLog.push({ path: "/logout", name: "Logout" });
+routesLog.push({ path: "/login", name: "Login", private: false, onlyPublic: true});
+routesLog.push({ path: "/profile", name: "Profile", private: true, });
+routesLog.push({ path: "/logout", name: "Logout", private: true, });
 
 function Header() {
+  const auth = useAuth();
+
   useEffect(() => {
     let prevScrollPos = window.pageYOffset;
 
@@ -76,14 +80,17 @@ function Header() {
             </li>
             ))}
         </ul>
-        <ul className=".log">
-          {routesLog.map(({ path, name }) => (
-            <li key={path}>
-              <NavLink to={path} className="active"> 
-                <span style={{ textTransform: 'uppercase' }}>{name}</span>
+        <ul className="log">
+        {routesLog.map(routeLog => (
+          (routeLog.private && !auth.user) || (routeLog.onlyPublic && auth.user) ? null : (
+            <li key={routeLog.path}>
+              <NavLink to={routeLog.path} className="active">
+                <span style={{ textTransform: 'uppercase' }}>{routeLog.name}</span>
               </NavLink>
             </li>
-          ))}
+            )
+        ))}
+
 
         </ul>
       </nav>

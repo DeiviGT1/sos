@@ -1,13 +1,11 @@
 import React from "react";
 import sub from "./Servicios.module.css";
 import cerrajero from "../assets/cerrajero2.jpg";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 function Servicios() {
   return (
     <>
-    <Header/>
+    
     <main>
       <section className={sub.subtitle}>
         <h2>Apertura</h2>
@@ -33,7 +31,7 @@ function Servicios() {
         </div>
       </section>
     </main>
-    <Footer/>
+    
     </>
   )
 }

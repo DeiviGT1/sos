@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Header";
+import divLog from "./Log.module.css";
 import { useAuth } from "../components/auth";
 
 function LoginPage() {
@@ -12,8 +12,7 @@ function LoginPage() {
   }
 
   return (
-    <>
-      <Header />
+    <div className={divLog.log}>
       <h1>Login</h1>
       <form onSubmit={login}>
         <label htmlFor=""> Escribe tu nombre de usuario: </label>
@@ -23,7 +22,7 @@ function LoginPage() {
         />
         <button type="submit">Entrar</button>
       </form>
-    </>
+    </div>
   );
 }
 
