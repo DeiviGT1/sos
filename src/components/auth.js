@@ -2,13 +2,17 @@ import React from "react"
 import { useNavigate, Navigate } from "react-router-dom";
 
 const AuthContext = React.createContext();
+const adminList = ["admin", "root", "superuser"]
 
 function AuthProvider({ children }){
   const nav = useNavigate()
   const [user, setUser] = React.useState(null)
 
-  const login = ( userName ) =>{
-    setUser(userName)
+  const login = ( username ) =>{
+    const isAdmin = adminList.includes(username.userName)
+    const name = username.userName
+    console.log(user, isAdmin)
+    setUser( { name, isAdmin} )
     nav("/profile")
   }
 

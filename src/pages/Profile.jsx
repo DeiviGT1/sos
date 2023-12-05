@@ -3,11 +3,15 @@ import { useAuth } from "../components/auth";
 
 function Profile() {
   const auth = useAuth();
+  console.log(auth)
 
   return (
     <>
       <h1>Profile</h1>
-      <p>Welcome, {auth.user?.userName}</p>
+      <p>Welcome, {auth.user?.name}</p>
+
+      {auth.user?.isAdmin && (
+        <p>Admin privileges granted!</p>)}
     </>
   );
 }
