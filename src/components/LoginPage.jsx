@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "../components/Header";
+import { useAuth } from "../components/auth";
 
 function LoginPage() {
+  const auth = useAuth();
   const [userName, setUserName] = React.useState('');
 
   const login = (e) =>{
     e.preventDefault();
-    localStorage.setItem('userName', userName);
-    // window.location.href = '/';
-    console.log(userName)
+    auth.login({userName})
   }
 
   return (
