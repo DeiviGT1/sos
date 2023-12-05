@@ -4,7 +4,7 @@ import logo from '../../src/assets/images/color-no-fondo.png'
 
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAuth } from '../components/auth';
+import { useAuth } from '../pages/LogMod/auth';
 
 const routes = [];
 routes.push({ path: "/", name: "Home" });

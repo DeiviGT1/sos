@@ -1,5 +1,6 @@
 import React from "react"
 import { useNavigate, Navigate } from "react-router-dom";
+import { getUser, addUser, validateUser } from "../Users/users"
 
 const AuthContext = React.createContext();
 const adminList = ["admin", "root", "superuser"]
@@ -11,8 +12,14 @@ function AuthProvider({ children }){
   const login = ( username ) =>{
     const isAdmin = adminList.includes(username.userName)
     const name = username.userName
-    setUser( { name, isAdmin} )
-    nav("/profile")
+    console.log(username)
+    console.log(username.userName, username.password)
+    if (validateUser(username.userName, username.password)){
+      setUser( { name, isAdmin} )
+      nav("/profile")  
+    } else {
+      alert("Usuario o contraseña incorrectos")
+    } 
   }
 
   const logout =  () =>{

@@ -10,7 +10,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
 import { Route, Routes, HashRouter } from "react-router-dom"
-import { AuthProvider, AuthRoute } from "./components/auth"
+import { AuthProvider, AuthRoute } from "./pages/LogMod/auth"
 
 function App() {
   return (
