@@ -1,14 +1,6 @@
-// create a header component
-
 import React from 'react';
 import './Header.module.css';
 import logo from '../../src/assets/images/color-no-fondo.png'
-import Principal from '../pages/Principal';
-import Galeria from '../pages/Galeria';
-import Contact from '../pages/Contact';
-import Servicios from '../pages/Servicios';
-import LoginPage from '../components/LoginPage';
-import LogoutPage from '../components/LogoutPage';
 
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';

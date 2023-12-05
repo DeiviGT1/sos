@@ -9,13 +9,13 @@ import LogoutPage from './components/LogoutPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
-import { Route, Routes, BrowserRouter } from "react-router-dom"
-import { AuthProvider } from "./components/auth"
+import { Route, Routes, HashRouter } from "react-router-dom"
+import { AuthProvider, AuthRoute } from "./components/auth"
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <AuthProvider>
           <Header />
             <Routes>
@@ -26,13 +26,26 @@ function App() {
               <Route path="/servicios" element={<Servicios />} />
               
               <Route path="/login" element={<LoginPage />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/logout" element={<LogoutPage />} />
+              <Route 
+                path="/profile" 
+                element={
+                  <AuthRoute>
+                    <Profile />
+                  </AuthRoute>
+                } 
+                />
+              <Route 
+                path="/logout" 
+                element={
+                  <AuthRoute>
+                    <LogoutPage />
+                  </AuthRoute>
+                  } />
             
             </Routes>
           <Footer />
         </AuthProvider>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

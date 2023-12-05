@@ -1,6 +1,7 @@
 import React from "react";
 import divLog from "./Log.module.css";
 import { useAuth } from "../components/auth";
+import { Navigate } from "react-router-dom";
 
 function LoginPage() {
   const auth = useAuth();
@@ -11,8 +12,13 @@ function LoginPage() {
     auth.login({userName})
   }
 
+  if  (auth.user) {
+    return (<Navigate to="/profile" />)
+  }
+
   return (
     <div className={divLog.log}>
+      <div>
       <h1>Login</h1>
       <form onSubmit={login}>
         <label htmlFor=""> Escribe tu nombre de usuario: </label>
@@ -22,6 +28,7 @@ function LoginPage() {
         />
         <button type="submit">Entrar</button>
       </form>
+      </div>
     </div>
   );
 }

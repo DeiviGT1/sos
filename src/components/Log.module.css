@@ -1,4 +1,4 @@
-.log{
-  margin: 7rem 0 3rem 0;
+.log>div{
+  padding: 7rem 0 3rem 0;
   text-align: center;
 }
