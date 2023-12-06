@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const twilio = require('twilio');
 
 const app = express();
+const port = process.env.PORT || 3001;
 
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,6 +17,11 @@ const twilioPhoneNumber = 'whatsapp:+14155238886'; // Your Twilio WhatsApp numbe
 const twilioClient = twilio(twilioAccountSid, twilioAuthToken);
 
 // Express route for handling form submissions
+app.get("/api", (req, res) => {
+    res.json({ message: "Hola desde el servidor!" });
+  });
+
+
 app.post('/enviar_formulario', (req, res) => {
     const { nombre, celular, correo, mensaje } = req.body;
 
@@ -39,4 +45,8 @@ app.post('/enviar_formulario', (req, res) => {
         console.error('Error sending WhatsApp message:', error);
         res.status(500).send('Internal Server Error');
     });
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
