@@ -4,7 +4,6 @@ import "./Contact.module.css";
 function Contact() {
   return(
     <>
-
     <main>
       <section className="contacto" style={
         {

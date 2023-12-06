@@ -1,16 +1,17 @@
 import React from "react";
-import { useAuth } from "../components/auth";
-import Header from "../components/Header";
+import { useAuth } from "./LogMod/auth";
 
 function Profile() {
   const auth = useAuth();
 
   return (
     <>
-      <Header />
       <h1>Profile</h1>
-      <p>Welcome, {auth.user.userName}</p>
-    </>  
+      <p>Welcome, {auth.user?.name}</p>
+
+      {auth.user?.isAdmin && (
+        <p>Admin privileges granted!</p>)}
+    </>
   );
 }
 

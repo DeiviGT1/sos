@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 function Principal() {
   return(
     <>
+    
       <main>
         <section className="main">
         <h2>S.O.S. Llaves y claves</h2>
@@ -118,6 +119,7 @@ function Principal() {
             </p>
           </section>
       </main>
+    
     </>
   )
 }

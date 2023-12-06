@@ -5,7 +5,7 @@ import cerrajero from "../assets/cerrajero2.jpg";
 function Servicios() {
   return (
     <>
-
+    
     <main>
       <section className={sub.subtitle}>
         <h2>Apertura</h2>
@@ -31,7 +31,7 @@ function Servicios() {
         </div>
       </section>
     </main>
-
+    
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import divLog from "./Log.module.css"
-import { useAuth } from "../components/auth";
+import { useAuth } from "./auth";
 
 function LogoutPage() {
   const auth = useAuth();

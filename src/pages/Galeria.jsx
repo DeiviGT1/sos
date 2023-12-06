@@ -243,8 +243,6 @@ function Galeria() {
       
         </div>
       </section>
-
-
     </>
   );
         }
