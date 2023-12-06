@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+require('dotenv').config({ path: '../.env' });
 const twilio = require('twilio');
-
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -10,10 +10,10 @@ const port = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Twilio credentials - replace with your actual Twilio credentials
-const twilioAccountSid = 'AC9b47d71ad5fa004ba3d53b775cd26dc4';
-const twilioAuthToken = '251de7af03fe544ee2d78fedb318f97d';
-const twilioPhoneNumber = 'whatsapp:+14155238886'; // Your Twilio WhatsApp number
+//Twilio credentials - replace with your actual Twilio credentials
+const twilioAccountSid = process.env.TWILIO_ACCOUNT_SID ;
+const twilioAuthToken = process.env.TWILIO_AUTH_TOKEN;
+const twilioPhoneNumber = process.env.TWILIO_ACCOUNT_NUMBER; // Your Twilio WhatsApp number
 
 // Twilio client
 const twilioClient = twilio(twilioAccountSid, twilioAuthToken);
