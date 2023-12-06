@@ -12,18 +12,18 @@ function Contact() {
       }>
         <h2>Contacto</h2>
         
-        <form action="/enviar_formulario.php" method="post">
+        <form action="/enviar_formulario" method="post">
           <label htmlFor="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required/>
+          <input type="text" id="nombre" name="nombre" defaultValue={"Jose"} required/>
 
-          <label htmlFor="nombre">Celular:</label>
-          <input type="text" id="celular" pattern="[0-9]{10}" name="nombre" required/>
+          <label htmlFor="celular">Celular:</label>
+          <input type="text" id="celular" pattern="[0-9]{10}" name="celular" defaultValue={"3173737496"} required/>
 
           <label htmlFor="correo">Correo electrónico:</label>
-          <input type="email" id="correo" name="correo" required/>
+          <input type="email" id="correo" name="correo" defaultValue={"josedago1163@gmail.com"} required/>
 
-          <label htmlFor="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <label htmlFor="mensaje">¿Que servicio necesitas?</label>
+          <textarea id="mensaje" name="mensaje" rows="4" defaultValue={"Mensaje"} required></textarea>
 
           <button type="submit">Enviar</button>
         
