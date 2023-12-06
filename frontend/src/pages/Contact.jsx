@@ -7,17 +7,21 @@ function Contact() {
 
   const formData = new FormData(event.target);
 
-  await fetch("/enviar_formulario", {
-    method: "post",
-    body: JSON.stringify({ data: formData.entries() }),
-    })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("Response from server:", data);
-    })
-    .catch((error) => {
-      console.error("Error submitting form:", error);
-    });
+  const data = {
+    nombre: formData.get("nombre"),
+    celular: formData.get("celular"),
+    correo: formData.get("correo"),
+    mensaje: formData.get("mensaje"),
+  };
+
+  const response = await fetch("enviar_formulario", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+    
   };
 
   return(

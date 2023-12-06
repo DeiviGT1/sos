@@ -1,71 +1,55 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const twilio = require('twilio');
-const { async } = require('q');
+
 
 const app = express();
 const port = process.env.PORT || 3001;
 
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Twilio credentials - replace with your actual Twilio credentials
 const twilioAccountSid = 'AC9b47d71ad5fa004ba3d53b775cd26dc4';
 const twilioAuthToken = '251de7af03fe544ee2d78fedb318f97d';
 const twilioPhoneNumber = 'whatsapp:+14155238886'; // Your Twilio WhatsApp number
 
-///
-async function printHello() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            console.log("hello");
-            resolve();
-        }, 1000); // Delay of 1000 milliseconds (1 second)
-    });
-}
-///
-
 // Twilio client
 const twilioClient = twilio(twilioAccountSid, twilioAuthToken);
 
-// Express route for handling form submissions
-app.get("/api", (req, res) => {
-    res.json({ message: "Hola desde el servidor!" });
-  });
-
-
-app.post('/enviar_formulario', async (req, res) => {
-    const { nombre, celular, correo, mensaje } = req.body;
-    console.log(res.body)
-    console.log(req.body);
-    
-    // const whatsappMessage = `Hola! 
-    // Te informamos que ${req.body.nombre} ha solicitado un servicio, estos son los datos necesarios
-    // Nombre: ${req.body.nombre}
-    // Celular: ${req.body.celular}
-    // Correo: ${req.body.correo}
-    // Mensaje: ${req.body.mensaje}`;
-    // twilioClient.messages.create({
-    //     body: whatsappMessage,
-    //     from: twilioPhoneNumber,
-    //     to: 'whatsapp:+573173737496', // Replace with the actual WhatsApp number
-    // })
-
-    
+app.post("/enviar_formulario", (req, res) => {
+    const whatsappMessage = `Hola! 
+    Te informamos que ${req.body.nombre} ha solicitado un servicio, estos son los datos necesarios
+    Nombre: ${req.body.nombre}
+    Celular: ${req.body.celular}
+    Correo: ${req.body.correo}
+    Mensaje: ${req.body.mensaje}`;
+    twilioClient.messages.create({
+        body: whatsappMessage,
+        from: twilioPhoneNumber,
+        to: 'whatsapp:+573173737496', // Replace with the actual WhatsApp number
+    })
     // WhatsApp sending
 
     // Now you should be able to access the form data
     
 
-    // .then(message => {
-    //     console.log(`WhatsApp message sent: ${message.sid}`);
-    //     res.redirect('/');
-    // })
-    // .catch(error => {
-    //     console.error('Error sending WhatsApp message:', error);
-    //     res.status(500).send('Internal Server Error');
-    // });
-});
+    .then(message => {
+        console.log(`WhatsApp message sent: ${message.sid}`);
+        res.redirect('/');
+    })
+    .catch(error => {
+        console.error('Error sending WhatsApp message:', error);
+        res.status(500).send('Internal Server Error');
+    });
+    
+  }
+);
+
+    
+
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
