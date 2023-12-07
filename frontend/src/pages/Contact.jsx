@@ -27,13 +27,12 @@ function Contact() {
   })
   
   .then(() => {
-    console.log(isOpen)
     setIsModalOpen(true)
-    console.log(isOpen)
   })
-  .then(() => {
-    console.log(isOpen)})
-  }
+  .catch((error) => {
+    console.error(error);
+  });
+}
   
   // .then(() => {
   //   window.location.href = "/";
