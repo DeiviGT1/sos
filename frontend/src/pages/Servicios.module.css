@@ -1,5 +1,6 @@
 .subtitle{
   text-align: center;
+  justify-content: justify;
   position: relative;
   top: 5rem;
   padding: 4rem 7.5%;
@@ -26,7 +27,7 @@
 
 @media (max-width: 750px) {
   .subtitle{
-    
+    top: 1rem;
     text-align: -webkit-center;
   }
 
@@ -37,6 +38,7 @@
   .subtitle div>p{
     width: 85%;
     padding: 7.5%;
+    font-size: 18px;
   }
 
   .subtitle img{
