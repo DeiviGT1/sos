@@ -20,16 +20,19 @@ const twilioPhoneNumber = process.env.TWILIO_ACCOUNT_NUMBER; // Your Twilio What
 const twilioClient = twilio(twilioAccountSid, twilioAuthToken);
 
 app.post("/enviar_formulario", (req, res) => {
+    console.log(twilioPhoneNumber)
     const whatsappMessage = `Hola! 
     Te informamos que ${req.body.nombre} ha solicitado un servicio, estos son los datos necesarios
     Nombre: ${req.body.nombre}
     Celular: ${req.body.celular}
     Correo: ${req.body.correo}
-    Direccion: ${req.body.direccion}
-    Mensaje: ${req.body.servicio}`;
+    
+    `;
+    console.log(req.body);
+
     twilioClient.messages.create({
-        body: whatsappMessage,
         from: twilioPhoneNumber,
+        body: whatsappMessage,
         to: 'whatsapp:+573173737496', // Replace with the actual WhatsApp number
     })
     // WhatsApp sending

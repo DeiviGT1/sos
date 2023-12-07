@@ -15,7 +15,7 @@ function Contact() {
     nombre: formData.get("nombre"),
     celular: formData.get("celular"),
     correo: formData.get("correo"),
-    mensaje: formData.get("mensaje"),
+    servicio: formData.get("servicio"),
   };
 
   const response = await fetch("enviar_formulario", {
@@ -26,9 +26,9 @@ function Contact() {
     body: JSON.stringify(data),
   })
   
-  .then(() => {
-    setIsModalOpen(true)
-  })
+  // .then(() => {
+  //   setIsModalOpen(true)
+  // })
   .catch((error) => {
     console.error(error);
   });
@@ -79,15 +79,6 @@ function Contact() {
               id="correo"
               name="correo"
               defaultValue={"tucorreo@gmail.com"}
-            />
-
-            <label htmlFor="direccion">Dirección:</label>
-            <input
-              type="direccion"
-              id="direccion"
-              name="direccion"
-              defaultValue={"Carrera 73 # 43-04"} 
-              required
             />
 
             <label htmlFor="servicio">¿Qué servicio solicitas?</label>
