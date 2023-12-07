@@ -1,7 +1,11 @@
 import React from "react";
 import "./Contact.module.css";
+import Modal from "../components/Modal";
+import { useState } from "react";
 
 function Contact() {
+  const [isOpen, setIsModalOpen] = useState(false);
+
   const handleSubmit = async (event) => {
   event.preventDefault();
 
@@ -23,9 +27,21 @@ function Contact() {
   })
   
   .then(() => {
-    window.location.href = "/";
+    console.log(isOpen)
+    setIsModalOpen(true)
+    console.log(isOpen)
   })
-  };
+  .then(() => {
+    console.log(isOpen)})
+  }
+  
+  // .then(() => {
+  //   window.location.href = "/";
+  //   })
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+  }
 
   return(
     <>
@@ -43,7 +59,8 @@ function Contact() {
               type="text"
               id="nombre"
               name="nombre"
-              placeholder={"David Gonzalez"}
+              //placeholder={"David Gonzalez"}
+              defaultValue={"David Gonzalez"}
               required
             />
 
@@ -53,7 +70,7 @@ function Contact() {
               id="celular"
               pattern="[0-9]{10}"
               name="celular"
-              placeholder={"3173737496"}
+              defaultValue={"3173737496"}
               required
             />
 
@@ -62,7 +79,7 @@ function Contact() {
               type="email"
               id="correo"
               name="correo"
-              placeholder={"tucorreo@gmail.com"}
+              defaultValue={"tucorreo@gmail.com"}
             />
 
             <label htmlFor="direccion">Dirección:</label>
@@ -70,8 +87,7 @@ function Contact() {
               type="direccion"
               id="direccion"
               name="direccion"
-              placeholder={"Carrera 73 # 43-04"} 
-              readOnly
+              defaultValue={"Carrera 73 # 43-04"} 
               required
             />
 
@@ -81,15 +97,19 @@ function Contact() {
               id="servicio"
               name="servicio"
               rows="8"
-              placeholder={"Apertura de puertas, cambio de cerraduras, etc."}
+              defaultValue={"Apertura de puertas, cambio de cerraduras, etc."}
               required
             ></textarea>
-
             <button type="submit">Enviar</button>
           </form>
       </section>
     </main>
-    
+    <div>
+      <Modal isOpen={isOpen} onClose={handleClose}>
+        <h2>¡Gracias por contactarnos!</h2>
+        <p>En breve nos comunicaremos contigo.</p>
+      </Modal>
+    </div>
     </>
   )
 }
