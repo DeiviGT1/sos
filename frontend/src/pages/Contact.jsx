@@ -43,7 +43,7 @@ function Contact() {
               type="text"
               id="nombre"
               name="nombre"
-              defaultValue={"Jose"}
+              placeholder={"David Gonzalez"}
               required
             />
 
@@ -53,7 +53,7 @@ function Contact() {
               id="celular"
               pattern="[0-9]{10}"
               name="celular"
-              defaultValue={"3173737496"}
+              placeholder={"3173737496"}
               required
             />
 
@@ -62,16 +62,26 @@ function Contact() {
               type="email"
               id="correo"
               name="correo"
-              defaultValue={"josedago1163@gmail.com"}
+              placeholder={"tucorreo@gmail.com"}
+            />
+
+            <label htmlFor="direccion">Dirección:</label>
+            <input
+              type="direccion"
+              id="direccion"
+              name="direccion"
+              placeholder={"Carrera 73 # 43-04"} 
+              readOnly
               required
             />
 
-            <label htmlFor="mensaje">¿Qué servicio necesitas?</label>
+            <label htmlFor="servicio">¿Qué servicio solicitas?</label>
             <textarea
-              id="mensaje"
-              name="mensaje"
-              rows="4"
-              defaultValue={"Mensaje"}
+              type="servicio"
+              id="servicio"
+              name="servicio"
+              rows="8"
+              placeholder={"Apertura de puertas, cambio de cerraduras, etc."}
               required
             ></textarea>
 

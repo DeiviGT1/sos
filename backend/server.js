@@ -25,7 +25,8 @@ app.post("/enviar_formulario", (req, res) => {
     Nombre: ${req.body.nombre}
     Celular: ${req.body.celular}
     Correo: ${req.body.correo}
-    Mensaje: ${req.body.mensaje}`;
+    Direccion: ${req.body.direccion}
+    Mensaje: ${req.body.servicio}`;
     twilioClient.messages.create({
         body: whatsappMessage,
         from: twilioPhoneNumber,
