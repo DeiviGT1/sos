@@ -4,6 +4,7 @@ require('dotenv').config({ path: '../.env' });
 const twilio = require('twilio');
 
 const app = express();
+
 const port = process.env.PORT || 3001;
 
 // Body parser middleware
@@ -42,15 +43,10 @@ app.post("/enviar_formulario", (req, res) => {
     .catch(error => {
         console.error('Error sending WhatsApp message:', error);
         res.status(500).send('Internal Server Error');
-    });
-    
+    }); 
   }
 );
 
-    
-
-
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server is running on port http://0.0.0.0:${port}`);
 });
