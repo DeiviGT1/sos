@@ -44,8 +44,7 @@ app.post("/enviar_formulario", (req, res) => {
     .catch(error => {
         console.error('Error sending WhatsApp message:', error);
         res.status(500).send('Internal Server Error');
-    });
-    
+    }); 
   }
 );
 
