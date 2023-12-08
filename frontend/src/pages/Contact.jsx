@@ -33,10 +33,7 @@ function Contact() {
     console.error(error);
   });
 }
-  
-  // .then(() => {
-  //   window.location.href = "/";
-  //   })
+
 
   const handleClose = () => {
     setIsModalOpen(false);
@@ -58,8 +55,7 @@ function Contact() {
               type="text"
               id="nombre"
               name="nombre"
-              //placeholder={"David Gonzalez"}
-              defaultValue={"David Gonzalez"}
+              placeholder={"David Gonzalez"}
               required
             />
 
@@ -69,7 +65,7 @@ function Contact() {
               id="celular"
               pattern="[0-9]{10}"
               name="celular"
-              defaultValue={"3173737496"}
+              placeholder={"3173737496"}
               required
             />
 
@@ -78,7 +74,7 @@ function Contact() {
               type="email"
               id="correo"
               name="correo"
-              defaultValue={"tucorreo@gmail.com"}
+              placeholder={"tucorreo@gmail.com"}
             />
 
             <label htmlFor="direccion">Dirección:</label>
@@ -86,7 +82,7 @@ function Contact() {
               type="direccion"
               id="direccion"
               name="direccion"
-              defaultValue={"Carrera 73 # 43-04"} 
+              placeholder={"Carrera 73 # 43-04"} 
               required
             />
 
@@ -96,7 +92,7 @@ function Contact() {
               id="servicio"
               name="servicio"
               rows="8"
-              defaultValue={"Apertura de puertas, cambio de cerraduras, etc."}
+              placeholder={"Apertura de puertas, cambio de cerraduras, etc."}
               required
             ></textarea>
             <button type="submit">Enviar</button>
