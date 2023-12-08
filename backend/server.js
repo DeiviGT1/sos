@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+require('dotenv').config({ path: '../.env' });
 //KYFZ8ETJ74L7KXKDF92QMKK8
 const twilio = require('twilio');
 
@@ -13,12 +14,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Twilio credentials - replace with your actual Twilio credentials
-const twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
+const twilioAccountSid = process.env.TWILIO_ACCOUNT_ID  ;
 const twilioAuthToken = process.env.TWILIO_TOKEN_ID;
 const twilioPhoneNumber = process.env.TWILIO_NUMBER_ID; // Your Twilio WhatsApp number
 
 // Twilio client
-const twilioClient = twilio(twilioAccountSid, twilioAuthToken);
+const twilioClient = new twilio(twilioAccountSid, twilioAuthToken);
 
 app.post("/enviar_formulario", (req, res) => {
     const whatsappMessage = `Hola! 
@@ -29,7 +30,7 @@ app.post("/enviar_formulario", (req, res) => {
     Mensaje: ${req.body.mensaje}`;
     twilioClient.messages.create({
         body: whatsappMessage,
-        from: twilioPhoneNumber,
+        from: 'whatsapp:+14155238886',
         to: 'whatsapp:+573173737496', // Replace with the actual WhatsApp number
     })
     // WhatsApp sending
@@ -48,6 +49,6 @@ app.post("/enviar_formulario", (req, res) => {
   }
 );
 
-app.listen(port, '0.0.0.0', () => {
-    console.log(`Server is running on port http://0.0.0.0:${port}`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
