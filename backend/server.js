@@ -1,9 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config({ path: '../.env' });
-//KYFZ8ETJ74L7KXKDF92QMKK8
 const twilio = require('twilio');
-
 
 const app = express();
 
@@ -27,7 +25,8 @@ app.post("/enviar_formulario", (req, res) => {
     Nombre: ${req.body.nombre}
     Celular: ${req.body.celular}
     Correo: ${req.body.correo}
-    Mensaje: ${req.body.mensaje}`;
+    Direccion: ${req.body.direccion}
+    Mensaje: ${req.body.servicio}`;
     twilioClient.messages.create({
         body: whatsappMessage,
         from: 'whatsapp:+14155238886',

@@ -1,7 +1,11 @@
 import React from "react";
 import "./Contact.module.css";
+import Modal from "../components/Modal";
+import { useState } from "react";
 
 function Contact() {
+  const [isOpen, setIsModalOpen] = useState(false);
+
   const handleSubmit = async (event) => {
   event.preventDefault();
 
@@ -20,9 +24,23 @@ function Contact() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
+  })
+  
+  .then(() => {
+    setIsModalOpen(true)
+  })
+  .catch((error) => {
+    console.error(error);
   });
-    
-  };
+}
+  
+  // .then(() => {
+  //   window.location.href = "/";
+  //   })
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+  }
 
   return(
     <>
@@ -40,7 +58,8 @@ function Contact() {
               type="text"
               id="nombre"
               name="nombre"
-              defaultValue={"Jose"}
+              //placeholder={"David Gonzalez"}
+              defaultValue={"David Gonzalez"}
               required
             />
 
@@ -59,24 +78,37 @@ function Contact() {
               type="email"
               id="correo"
               name="correo"
-              defaultValue={"josedago1163@gmail.com"}
+              defaultValue={"tucorreo@gmail.com"}
+            />
+
+            <label htmlFor="direccion">Dirección:</label>
+            <input
+              type="direccion"
+              id="direccion"
+              name="direccion"
+              defaultValue={"Carrera 73 # 43-04"} 
               required
             />
 
-            <label htmlFor="mensaje">¿Qué servicio necesitas?</label>
+            <label htmlFor="servicio">¿Qué servicio solicitas?</label>
             <textarea
-              id="mensaje"
-              name="mensaje"
-              rows="4"
-              defaultValue={"Mensaje"}
+              type="servicio"
+              id="servicio"
+              name="servicio"
+              rows="8"
+              defaultValue={"Apertura de puertas, cambio de cerraduras, etc."}
               required
             ></textarea>
-
             <button type="submit">Enviar</button>
           </form>
       </section>
     </main>
-    
+    <div>
+      <Modal isOpen={isOpen} onClose={handleClose}>
+        <h2>¡Gracias por contactarnos!</h2>
+        <p>En breve nos comunicaremos contigo.</p>
+      </Modal>
+    </div>
     </>
   )
 }
