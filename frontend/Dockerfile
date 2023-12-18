@@ -8,7 +8,7 @@ USER root
 
 RUN npm install
 
-USER nodegit
+USER node
 
 COPY --chown=node:node . .
 

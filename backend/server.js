@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config({ path: '../.env' });
 const twilio = require('twilio');
+const cors = require('cors'); // Import the cors middleware
+
 
 const app = express();
 
@@ -10,6 +12,11 @@ const port = process.env.PORT || 3001;
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  }));
 
 // Twilio credentials - replace with your actual Twilio credentials
 const twilioAccountSid = process.env.TWILIO_ACCOUNT_ID  ;
@@ -19,6 +26,10 @@ const twilioPhoneNumber = process.env.TWILIO_NUMBER_ID; // Your Twilio WhatsApp 
 // Twilio client
 const twilioClient = new twilio(twilioAccountSid, twilioAuthToken);
 
+app.get("/hola", () =>{
+    console.log("hola")
+})
+
 app.post("/enviar_formulario", (req, res) => {
     const whatsappMessage = `Hola! 
     Te informamos que ${req.body.nombre} ha solicitado un servicio, estos son los datos necesarios
@@ -27,6 +38,7 @@ app.post("/enviar_formulario", (req, res) => {
     Correo: ${req.body.correo}
     Direccion: ${req.body.direccion}
     Mensaje: ${req.body.servicio}`;
+    console.log(`El nombre es ${req.body.nombre}`)
     twilioClient.messages.create({
         body: whatsappMessage,
         from: 'whatsapp:+14155238886',
@@ -48,6 +60,6 @@ app.post("/enviar_formulario", (req, res) => {
   }
 );
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(() => {
     console.log(`Server is running on port ${port}`);
 });

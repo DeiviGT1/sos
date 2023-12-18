@@ -8,7 +8,7 @@ USER root
 
 RUN npm install
 
-USER nodegit
+USER node
 
 COPY --chown=node:node . .
 
@@ -19,3 +19,4 @@ ENV TWILIO_TOKEN_ID=""
 ENV TWILIO_NUMBER_ID=""
 
 CMD ["node", "server.js"] 
+
