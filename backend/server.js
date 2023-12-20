@@ -31,6 +31,7 @@ app.get("/hola", () =>{
 })
 
 app.post("/enviar_formulario", (req, res) => {
+    console.log(twilioPhoneNumber)
     const whatsappMessage = `Hola! 
     Te informamos que ${req.body.nombre} ha solicitado un servicio, estos son los datos necesarios
     Nombre: ${req.body.nombre}
@@ -38,10 +39,12 @@ app.post("/enviar_formulario", (req, res) => {
     Correo: ${req.body.correo}
     Direccion: ${req.body.direccion}
     Mensaje: ${req.body.servicio}`;
-    console.log(`El nombre es ${req.body.nombre}`)
+    console.log(`El nombre es ${req.body.nombre}`);
+
+
     twilioClient.messages.create({
+        from: twilioPhoneNumber,
         body: whatsappMessage,
-        from: 'whatsapp:+14155238886',
         to: 'whatsapp:+573173737496', // Replace with the actual WhatsApp number
     })
     // WhatsApp sending

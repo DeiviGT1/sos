@@ -15,7 +15,8 @@ function Contact() {
     nombre: formData.get("nombre"),
     celular: formData.get("celular"),
     correo: formData.get("correo"),
-    mensaje: formData.get("mensaje"),
+    direccion: formData.get("direccion"),
+    servicio: formData.get("servicio"),
   };
 
   const response = await fetch("enviar_formulario", {
@@ -26,9 +27,9 @@ function Contact() {
     body: JSON.stringify(data),
   })
   
-  .then(() => {
-    // setIsModalOpen(true)
-  })
+  // .then(() => {
+  //   setIsModalOpen(true)
+  // })
   .catch((error) => {
     console.error(error);
   });

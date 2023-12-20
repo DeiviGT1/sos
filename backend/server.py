@@ -2,6 +2,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from twilio.rest import Client
+import uvicorn
+
 from dotenv import load_dotenv
 import os
 from fastapi.responses import JSONResponse
@@ -25,6 +27,7 @@ twilio_account_sid = os.getenv("TWILIO_ACCOUNT_ID")
 twilio_auth_token = os.getenv("TWILIO_TOKEN_ID")
 twilio_phone_number = os.getenv("TWILIO_NUMBER_ID")
 
+
 # Twilio client
 twilio_client = Client(twilio_account_sid, twilio_auth_token)
 
@@ -34,7 +37,6 @@ class FormData(BaseModel):
     correo: str
     direccion: str
     servicio: str
-    telefono: str
 
 @app.get("/hola")
 def hola():
@@ -43,7 +45,6 @@ def hola():
 
 @app.post("/enviar_formulario")
 def enviar_formulario(data: FormData):
-  print(data)
   try:
     whatsapp_message = f"""Hola!
     Te informamos que {data.nombre} ha solicitado un servicio, estos son los datos necesarios
@@ -53,14 +54,18 @@ def enviar_formulario(data: FormData):
     Direccion: {data.direccion}
     Mensaje: {data.servicio}"""
 
-    print(f"El nombre es {data.nombre}")
+    message = twilio_client.messages.create(
+      from_='whatsapp:+14155238886',
+      body='Your appointment is coming up on July 21 at 3PM',
+      to='whatsapp:+573173737496'
+    )
 
     message = twilio_client.messages.create(
         body=whatsapp_message,
         from_='whatsapp:+14155238886',
-        to=f'whatsapp:{data.telefono}'
+        to='whatsapp:+573173737496'
     )
-
+    
     print(f'WhatsApp message sent: {message.sid}')
     return {
         "status": "OK",
@@ -68,12 +73,9 @@ def enviar_formulario(data: FormData):
     }
   except Exception as e:
     error_response = JSONResponse(content={"status": "Error", "detail": str(e)}, status_code=422)
-    print(error_response.content)
+
     return error_response
 
 
-
-
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=3001)
