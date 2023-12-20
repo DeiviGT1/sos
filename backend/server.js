@@ -13,7 +13,7 @@ const port = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'http://127.0.0.1:3000',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   }));
@@ -60,6 +60,6 @@ app.post("/enviar_formulario", (req, res) => {
   }
 );
 
-app.listen(() => {
+app.listen(port, "127.0.0.1", () => {
     console.log(`Server is running on port ${port}`);
 });

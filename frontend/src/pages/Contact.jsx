@@ -27,7 +27,7 @@ function Contact() {
   })
   
   .then(() => {
-    setIsModalOpen(true)
+    // setIsModalOpen(true)
   })
   .catch((error) => {
     console.error(error);
@@ -63,7 +63,7 @@ function Contact() {
             <input
               type="text"
               id="celular"
-              pattern="[0-9]{10}"
+              // pattern="[0-9]{10}"
               name="celular"
               placeholder={"3173737496"}
               required
@@ -71,7 +71,7 @@ function Contact() {
 
             <label htmlFor="correo">Correo electrónico:</label>
             <input
-              type="email"
+              // type="email"
               id="correo"
               name="correo"
               placeholder={"tucorreo@gmail.com"}
