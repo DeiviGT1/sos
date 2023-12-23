@@ -2,13 +2,9 @@ FROM python:3.9
 
 WORKDIR /Users/David/Desktop/sos/backend 
 
-COPY requirements.txt .
-
-USER root
+COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
 
 EXPOSE 3001
 

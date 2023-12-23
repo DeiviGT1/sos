@@ -78,4 +78,3 @@ def enviar_formulario(data: FormData):
 
 
 print(f"Server is running on http://127.0.0.1:3001")
-uvicorn.run(app, host="127.0.0.1", port=3001)
