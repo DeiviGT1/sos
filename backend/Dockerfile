@@ -1,16 +1,14 @@
-FROM node:19.1.0 
+FROM python:3.9
 
 WORKDIR /Users/David/Desktop/sos/backend 
 
-COPY package.json .
+COPY requirements.txt .
 
 USER root
 
-RUN npm install
+RUN pip install --no-cache-dir -r requirements.txt
 
-USER node
-
-COPY --chown=node:node . .
+COPY . .
 
 EXPOSE 3001
 
@@ -18,5 +16,4 @@ ENV TWILIO_ACCOUNT_ID=""
 ENV TWILIO_TOKEN_ID=""
 ENV TWILIO_NUMBER_ID=""
 
-CMD ["python3", "server.py"] 
-
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "3001"]
