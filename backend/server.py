@@ -77,5 +77,5 @@ def enviar_formulario(data: FormData):
     return error_response
 
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=3001)
+print(f"Server is running on http://127.0.0.1:3001")
+uvicorn.run(app, host="127.0.0.1", port=3001)

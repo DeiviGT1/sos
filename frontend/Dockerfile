@@ -1,6 +1,6 @@
 FROM node:19.1.0 
 
-WORKDIR /Users/David/Desktop/sos/frontend 
+WORKDIR /Users/David/Desktop/sos/frontend
 
 COPY package.json .
 
