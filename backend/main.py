@@ -43,7 +43,7 @@ def hola():
     print("hola")
     return "Hola"
 
-@app.post("/enviar_formulario")
+@app.get("/enviar_formulario")
 def enviar_formulario(data: FormData):
   try:
     whatsapp_message = f"""Hola!
